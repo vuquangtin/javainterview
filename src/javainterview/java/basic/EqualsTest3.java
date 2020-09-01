@@ -1,4 +1,4 @@
-package javainterview.java.core.basic;
+package javainterview.java.basic;
 
 /**
  *  Difference between == and .equals() method in Java
