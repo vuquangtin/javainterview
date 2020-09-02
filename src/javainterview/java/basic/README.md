@@ -1,13 +1,24 @@
+## Sự khác nhau giữa JDK,JRE và JVM?
+## Trình biên dịch JIT là gì?
+Trình biên dịch JIT (Just-In-Time) được sử dụng để tăng hiệu suất biên dịch chương trình. Trình JIT biên dịch từng phần của byte code có chức năng giống nhau tại cùng một thời điểm, do đó sẽ giảm được thời gian biên dich. Ở đây, thuật ngữ "trình biên dịch" dùng để chỉ trình dịch từ tập lệnh của một máy ảo Java (JVM) tới tập lệnh của một CPU cụ thể.
+## Platform là gì?
+Bất cứ môi trường phần cứng hoặc phần mềm nào mà trong đó có một chương trình chạy, thì được hiểu như là một Platform. Với môi trường runtime riêng cho mình (JRE) và API, Java được gọi là Platform
+## Sự khác nhau giữa Java platform và các platform khác?
+Java platform khác với hầu hết các nền tảng khác theo nghĩa nó là một nền tảng dựa trên phần mềm chạy trên các nền tảng phần cứng khác. Nó có hai thành phần:
+
+* Môi trường thực thi (Runtime)
+* API(Application Programming Interface)
+
+## Tính chất "viết một lần chạy nhiều nơi" của java là gì?
+Java code được biên dịch thành một byte code, là ngôn ngữ trung gian giữa mã nguồn và mã máy. Byte code này không phải là nền tảng cụ thể và do đó có thể được thông dịch cho bất kỳ nền tảng nào.
+## Classloader trong java là gì?
+Classloader là một hệ thống con của JVM được sử dụng để tải các lớp và các interface. Có rất nhiều loại Classloader ví dụ: Bootstrap classloader, Extension classloader, System classloader, Plugin classloader...
 ### Sự khác nhau giữa bộ nhớ heap và stack trong java?
 @see https://viettuts.vn/interview/list-cau-hoi-phong-van-java-core-2
 
 >Stack là một vùng nhớ được sử dụng để lưu trữ các tham số và các biến local của phương thức mỗi khi một phương thức được gọi ra.
 
 >Heap là một vùng nhớ trong bộ nhớ được sử dụng để lưu trữ các đối tượng khi từ khóa new được gọi ra, các biến static và các biến toàn cục (biến instance). 
-
-### Tính chất "viết một lần chạy nhiều nơi" của java là gì?
-
-Java code được biên dịch thành một byte code, là ngôn ngữ trung gian giữa mã nguồn và mã máy. Byte code này không phải là nền tảng cụ thể và do đó có thể được thông dịch cho bất kỳ nền tảng nào. 
 
 ### File có tên trống ".java" có hợp lệ không?
 
@@ -25,6 +36,10 @@ Biên dịch: ```javac .java```
 
 Run: java A 
 
+### Các từ delete, next, main, exit và null có phải là từ khóa trong java không?
+
+Không.
+
 ### Nếu không cung cấp bất kỳ đối số nào trên command line, thì mảng String của hàm main là empty hay null?
 
 Mảng String là empty, không phải null. 
@@ -32,6 +47,9 @@ Mảng String là empty, không phải null.
 ### Chuyện gì xảy ra nếu khai báo static public void thay vì public static void?
 
 Chương trình được biên dịch và run đúng. 
+
+### Giá trị mặc định của các biến local là gì?
+Các biến local không được khởi tạo với bất kỳ giá trị mặc định nào, bất kể là nguyên thủy hay tham chiếu đối tượng.
 
 ### What is final keyword in Java?
 
