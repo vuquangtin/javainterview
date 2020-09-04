@@ -528,7 +528,7 @@ Explanation:
 # Mock exam 1 for SCJP 6
 ---
 
-### Which declaration of the main method below would allow a class to be started as a standalone program. Select the one correct answer.
+### 1) Which declaration of the main method below would allow a class to be started as a standalone program. Select the one correct answer.
 
 A. public static int main(char args[])
 
