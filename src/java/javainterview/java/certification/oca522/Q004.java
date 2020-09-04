@@ -1,6 +1,6 @@
 package javainterview.java.certification.oca522;
 
-public class Q4 {
+public class Q004 {
     public static void main(String[] args) {
         int iVar = 100;
         float fVar = 100.100f;

@@ -1,6 +1,6 @@
 package javainterview.java.certification.oca522;
 
-public class Q3 {
+public class Q003 {
     public static void main(String[] args) {
 
 //        int num [][] =  new int[1][3];                      // 1 row 3 deger

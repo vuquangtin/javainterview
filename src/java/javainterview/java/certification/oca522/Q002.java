@@ -1,10 +1,10 @@
 package javainterview.java.certification.oca522;
 
-public class Q2 {
-	private Q2(int a, int b) {
+public class Q002 {
+	private Q002(int a, int b) {
 	}
 
-	private Q2(int a, int b, int c) {
+	private Q002(int a, int b, int c) {
 	}
 
 	public static void main(String[] args) {
