@@ -1,5 +1,13 @@
 package javainterview.java.certification.oca522;
-
+/**
+ * 
+ * 
+ * @author EMAIL:vuquangtin@gmail.com , tel:0377443333
+ * @version 1.0.0
+ * @see <a
+ *      href="https://github.com/vuquangtin/javainterview">https://github.com/vuquangtin/javainterview</a>
+ *
+ */
 public class Q004 {
     public static void main(String[] args) {
         int iVar = 100;
@@ -28,7 +36,7 @@ public class Q004 {
         D. Line 10
         E. Line 11
         F. Line 12
-        Answer: ADF
+        Answer: BCE
          */
 
 

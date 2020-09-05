@@ -1,5 +1,14 @@
 package javainterview.java.certification.oca522;
 
+/**
+ * 
+ * 
+ * @author EMAIL:vuquangtin@gmail.com , tel:0377443333
+ * @version 1.0.0
+ * @see <a
+ *      href="https://github.com/vuquangtin/javainterview">https://github.com/vuquangtin/javainterview</a>
+ *
+ */
 public class Q181 {
 	public static void main(String[] args) {
 		String ta = "A ";
@@ -13,12 +22,12 @@ public class Q181 {
 }
 
 /*-
-Q181
-What is the result?
-A. A B C C
-B. A C D
-C. A C D D
-D. A B D
-E. A B D C
-Answer: A
+ Q181
+ What is the result?
+ A. A B C C
+ B. A C D
+ C. A C D D
+ D. A B D
+ E. A B D C
+ Answer: A
  */
