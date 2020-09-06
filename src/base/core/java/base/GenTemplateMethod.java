@@ -21,7 +21,7 @@ public class GenTemplateMethod {
 		for (int i = 1; i <= START + LENGTH; i++) {
 			System.out.println("public static void " + name + i
 					+ "(String[] args){}");
-			callInMain += name + "" + i + "(args);\n";
+			callInMain +="try {"+ name + "" + i + "(args);\n} catch (Exception ex) {\nex.printStackTrace();\n}";
 		}
 		System.out.println(callInMain);
 
