@@ -9,7 +9,9 @@ import core.java.utilities.Log4jUtils;
  * 
  * @author EMAIL:vuquangtin@gmail.com , tel:0377443333
  * @version 1.0.0
- * @see <a href="https://github.com/vuquangtin/javainterview">https://github.com
+ * @see <a
+ *      href="https://github.com/vuquangtin/javainterview">https://github.com
+
  *      /vuquangtin/javainterview</a>
  *
  */
@@ -595,7 +597,7 @@ public class Q001_100 {
 	inside if statement true and false is switched
 	answer is
 	succes
-	*/
+	 */
 	public static void main13(String[] args) {
 		// write your code here
 		System.out.println("Result A " + 0 + 1);
@@ -656,19 +658,19 @@ public class Q001_100 {
 		// System.out.println(array[0] + " : " + array[1] );
 
 		//
-		//// Which code fragment, when inserted at line 3, enables the code to
-		//// print 10:20?
+		// // Which code fragment, when inserted at line 3, enables the code to
+		// // print 10:20?
 		//
-		//// A. int [] array = new int [1];
+		// // A. int [] array = new int [1];
 		//
-		//// B. int [] array;
-		//// array = new int [2];
+		// // B. int [] array;
+		// // array = new int [2];
 		//
-		//// C. int array = new int [2];
+		// // C. int array = new int [2];
 		//
-		//// D. int array [1];
+		// // D. int array [1];
 		//
-		//// ans: B
+		// // ans: B
 		//
 		//
 		/*-
@@ -714,7 +716,7 @@ public class Q001_100 {
 		       continue;
 		   }
 			   }
-			   */
+		 */
 		// A B D E
 		/*-
 			   String [] [] arr = {{ "A", "B", "C"},  {"D", "E"}};
@@ -728,7 +730,7 @@ public class Q001_100 {
 		   break;
 			   }
 			}
-			*/
+		 */
 		// A B C
 		/*-
 		   String[][] arr = {{"A", "B", "C"}, {"D", "E"}};
@@ -743,7 +745,7 @@ public class Q001_100 {
 		       continue;
 		   }
 			   }
-		*/
+		 */
 		// Compile fail
 		/*-
 		   String[][] arr = {{"A", "B", "C"}, {"D", "E"}};
@@ -764,7 +766,7 @@ public class Q001_100 {
 		C. A B D E
 		D. Compilation fails
 		ans:D
-		*/
+		 */
 
 	}
 
@@ -896,16 +898,16 @@ public class Q001_100 {
 		// 97  98
 		// 99  100 null null null
 		
-		* What is the result?
-		* A. 97 9899 100 null null null
-		* B. 97 9899 100 101 102 103
-		* C. Compilation fails.
-		* D. A NullPointerException is thrown at runtime.
-		* E. An ArrayIndexOutOfBoundsException is thrown at runtime.
-		*
-		* Answer: E
-		*
-		* Explanation:
+		 * What is the result?
+		 * A. 97 9899 100 null null null
+		 * B. 97 9899 100 101 102 103
+		 * C. Compilation fails.
+		 * D. A NullPointerException is thrown at runtime.
+		 * E. An ArrayIndexOutOfBoundsException is thrown at runtime.
+		 *
+		 * Answer: E
+		 *
+		 * Explanation:
 		Console:
 		Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index2 out of bounds for length 2
 		at Test.main(Test.java:11)
@@ -923,6 +925,54 @@ public class Q001_100 {
 	}
 
 	public static void main19(String[] args) {
+		/*-
+		 * public class Acc {
+		int p;          //not visible outside of the package
+		private int q;  //only visible within the class
+		protected int r; //
+		public int s;   // visible in universe
+		}
+		 */
+		/*-
+		  Acc obj = new Acc();
+		    obj.s = 4;
+		//    obj.r = 5;
+
+		    Acc obj2 = new Test();
+		    obj2.s = 4;
+		   // obj2.r = 5;
+
+
+		    Test obj1 = new Test();
+		            obj1.s = 4;
+		            obj1.r = 5;
+
+
+		 */
+		// Protected is inheritable to sub class (outside the package) so there
+		// for if
+		// the sub class’ object was created then you could access to the
+		// protected variable.
+		// But the object was created from super class
+		// Test obj = new Test();
+		// obj.s = 4;
+		// obj.r = 5;
+
+		/*-
+		 Which statement is true?
+		  A. Both p and s are accessible via obj.
+		  B. Only s is accessible via obj.
+		  C. Both r and s are accessible via obj.
+		  D. p, r, and s are accessible via obj.
+		 Answer: B
+		 So, public can be reached from anywhere....
+		 protected can be reached from the same package,
+		 and if we need to reach from another package,
+		 it needs to be extend from parent AND needs to
+		 create an object from the child class...
+		 Default only can be reached from same package...
+		 Private only from same class.
+		 */
 	}
 
 	public static void main20(String[] args) {
