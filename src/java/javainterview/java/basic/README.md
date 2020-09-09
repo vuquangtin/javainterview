@@ -848,3 +848,4 @@ Main method
 9. **Can main method be declared final?**
 
     Yes it can be declared as final.
+    
