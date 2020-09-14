@@ -1556,6 +1556,1572 @@ Explanation:The method throwMethod() is throwing and type Exception class instan
 
 File class can be used to navigate the directories in the underlying file system. But in the File class there is no way you change the directory . Constructing the File class instance will always point to only one particular directory. To go to another directory you may have to create another instance of a File class.
 
+# OCPJP 6 Mock Exam -10
+----
+
+### 1 . Given:
+
+
+```java
+public abstract class Prod {
+   public abstract void prmth1();
+  public static void prmth2() {
+     int mth2 = 30;
+     System.out.println("prmth2 = " + mth2);
+   }
+  public abstract void prmth3();
+ }
+
+```
+
+What is the result?
+
+1.     Compilation succeeds
+2.     Compilation fails because of an error on line 1
+3.     Compilation fails because of an error on line 3
+4.     Compilation fails because of an error on line 7
+
+
+
+### 2 . Given:
+
+
+```java
+ public class ClassA {
+   public static void main(String [] args) {
+
+     switch(x) {
+       default:
+        System.out.println("Here it is.");
+      }
+    }
+}
+
+```
+
+The ClassA class can be compiled successfully by inserting one of three possible options on line 3. When inserted separately, which three will allow compilation to succeed?
+
+Choose three of the below:
+
+1.     int x = 6;
+2.     short x = 3;
+3.     char x = ‘y’;
+4.     long x = 354;
+5.     boolean x = true;
+
+
+
+### 3 . Given:
+
+
+```java
+public class NewGarb {
+ public static Object getIt() {
+    Object rg = new Integer(3);
+  Object dg[][] = new Object[1][2];
+   dg[0][1] = rg;
+  dg[0][0] = rg;
+   rg = null;
+   return rg;
+  }
+}
+
+```
+
+Which statement is true?
+
+1.     The NewGarb class will not compile
+2.     The getIt() method must not be declared as static
+3.     The NewGarb class compiles, but an exception is received because dg is not set to null
+4.     The rg object is eligible for garbage collection after a call to the getIt() method has returned
+
+
+### 4 . Given:
+
+
+```java
+public class SetFor {
+
+   public static void main(String [] args) {
+
+    System.out.println("You will need to use " + c);
+   }
+ }
+
+```
+
+Which two additions will individually allow compilation to succeed? (Choose two.)
+
+1.     “char c;” placed on line 2
+2.     “char c;” placed on line 4
+3.     “char c = ‘f’;” placed on line 2
+4.     “char c = ‘f’;” placed on line 4
+5.     “static char c;” placed on line 2
+6.     “char c = new char();” placed on line 4
+
+
+### 5 . Given:
+
+
+```java
+public class TeSet {
+  public static void main(String args[]) {
+    int m = 2;
+    int p = 1;
+    int t = 0;
+   for(;p < 5;p++) {
+      if(t++ > m) {
+       m = p + t;
+     }
+    }
+    System.out.println("t equals " + t);
+ }
+}
+
+```
+
+What is the resulting value of t?
+
+1.     2
+2.     4
+3.     6
+4.     7
+
+
+### 6 . Given:
+
+
+```java
+ class IntType {
+  public String getType(String a, int b, char c) {
+     String holdit1 = new String();
+    holdit1 = a;
+     return holdit1;
+  }
+ }
+
+ class OverType extends IntType {
+
+    String holdit2 = new String();
+    holdit2 = holdit2.concat("This is ").concat(a);
+    return holdit2;
+  }
+public static void main(String args[]) {
+     OverType ot = new OverType();
+    String x = new String("x");
+    int y = 1;
+     char z = 'b';
+    System.out.println(ot.getType(x, y, z));
+  }
+ }
+
+```
+
+When inserted on line 10, which line will override the getType method, allowing compilation to succeed and the output “This is x”?
+
+1.     public Char getType(String a, int b, char c) {
+2.     public Char getType(int b, String a, char c) {
+3.     public String getType(String a, int b, char c) {
+4.     public String getType(int b, String a, char c) {
+
+
+
+### 7 . Given:
+
+
+```java
+public class MyThread implements Runnable {
+    private String holdA = "This is ";
+     private int[] holdB = {1,2,3,4,5,6,7,8,9,10};
+      public static void main(String args[]) {
+       MyThread z = new MyThread();
+       (new Thread(z)).start();
+       (new Thread(z)).start();
+  }
+
+  public synchronized void run() {
+    for(int w = 0;w < 10;w++) {
+      System.out.println(holdA + holdB[w] + ".");
+    }
+  }
+}
+
+```
+
+What is the result?
+
+1.     Compilation fails because of an error on line 6
+2.     Compilation fails because of an error on line 11
+3.     Compilation fails because of errors on lines 7 and 8
+4.     Compilation succeeds and the program prints each value in the holdB array at the end of the “This is ” line. Each value is printed two times before the program ends, and the values are not printed in sequential order
+5.     Compilation succeeds & the prog. prints each val in the holdB array at the end of the “This is ” line. Each val is printed in order from 1-10 & after the val 10 prints, it starts printing the vals 1-10 in order again
+
+
+### 8 . Given:
+
+
+```java
+import java.awt.*;
+
+public class Birthdays extends Frame {
+  Birthdays() {
+    super("Birthday Reminder");
+     String lblsP1[] = {"Name:", "Birthday:", "Address:"};
+    String butnsP2[] = {"Add", "Save", "Exit"};
+     Panel panelTop = new Panel();
+     Panel panelBot = new Panel();
+    panelTop.setLayout(new GridLayout(3,2,3,3));
+    for(int x = 0; x < lblsP1.length; x++) {
+      panelTop.add(new Label(lblsP1[x]));
+      panelTop.add(new TextField());
+    }
+    for(int y = 0; y < butnsP2.length; y++) {
+      panelBot.add(new Button(butnsP2[y]));
+    }
+    add(panelTop, BorderLayout.NORTH);
+    add(panelBot, BorderLayout.SOUTH);
+  }
+}
+
+```
+
+Which main method should you add to the Birthdays class to allow the program to compile and run with all defined fields properly displayed?
+
+1.     public static void main(String args[]) { Frame.visible = true; }
+2.     public static void main(String args[]) { Frame f = new Frame(); f.setVisible(true);}
+3.     public static void main(String args[]) { Birthdays b = new Birthdays(); b.pack(); b.setVisible(true); }
+4.     public static void main(String args[]) { Frame f = Birthdays.new Frame(); f.pack(); f.visible = true; }
+
+
+### 9 . Given:
+
+
+```java
+public class GetIt {
+  public static void main(String args[]) {
+    double x[] = {10.2, 9.1, 8.7};
+    int i[] = new int[3];
+    for(int a = 0;a < (x.length);a++) {
+
+      System.out.println(i[a]);
+     }
+   }
+}
+
+```
+
+The GetIt class should print the following:
+11
+10
+9
+Which line should you insert on line 6 to accomplish this?
+
+1.     i[a] = ((int)Math.min(x[a]));
+2.     i[a] = ((int)Math.max(x[a]));
+3.     i[a] = ((int)Math.ceil(x[a]));
+4.     i[a] = ((int)Math.floor(x[a]));
+
+
+### 10 . Which statement about the Map interface is true?
+
+1.     Entries are placed in a Map using the values() method
+2.     Entries are placed in a Map using the entrySet() method
+3.     A key/value association is added to a Map using the put() method
+4.     A key/value association is added to a Map using the putAll() method
+
+### 11 . Consider this class:
+
+
+```java
+public class Test1 {
+  public float aMethod(float a, float b) {
+  }
+
+}
+
+```
+
+Which of the following methods would be legal if added (individually) at line 4?
+
+1.     public int aMethod(int a, int b) { }
+2.     public float aMethod(float a, float b) { }
+3.     public float aMethod(float a, float b, int c) throws _Exception { }
+4.     public float aMethod(float c, float d) { }
+5.     private float aMethod(int a, int b, int c) { }
+
+
+### 12 . Consider these classes, defined in separate source files:
+
+
+```java
+public class Test1 {
+  public float aMethod(float a, float b)
+      throws IOException {
+  }
+}
+
+```
+
+
+```java
+public class Test2 extends Test1 {
+ }
+
+```
+
+Which of the following methods would be legal (individually) at line 2 in class Test2?
+
+1.     float aMethod(float a, float b) { }
+2.     public int aMethod(int a, int b) throws Exception { }
+3.     public float aMethod(float a, float b) throws _Exception { }
+4.     public float aMethod(float p, float q) { }
+
+
+
+### 13 . You have been given a design document for a veterinary registration system for implementation in Java technology. It states:
+
+
+```java
+"A pet has an owner, a registration date, and a vaccination-due date.
+A cat is a pet that has a flag indicating if it has been neutered, and a
+textual description of its markings."
+
+```
+
+Given that the Pet class has already been defined, which of the following fields would be appropriate for inclusion in the Cat class as members?
+
+1.     Pet thePet;
+2.     Date registered;
+3.     Date vaccinationDue;
+4.     Cat theCat;
+5.     boolean neutered;
+6.     String markings;
+
+
+### 14 . You have been given a design document for a veterinary registration system for implementation in Java. It states:
+
+
+```java
+"A pet has an owner, a registration date, and a vaccination-due date. A cat is a pet that has a flag indicating if it has been neutered, and a textual description of its markings."
+
+```
+
+Given that the Pet class has already been defined and you expect the Cat class to be used freely throughout the application, how would you make the opening declaration of the Cat class, up to but not including the first opening brace?
+Use only these words and spaces:
+boolean, Cat, class, Date, extends, Object, Owner, Pet, private, protected, public, String.
+
+### 15 . Consider the following classes, declared in separate source files:
+
+
+```java
+public class Base {
+  public void method(int i) {
+   System.out.println("Value is " + i);
+  }
+}
+public class Sub extends Base {
+    public void method(int j) {
+      System.out.println("This value is " + j);
+    }
+    public void method(String s) {
+     System.out.println("I was passed " + s);
+    }
+    public static void main(String args[]) {
+      Base b1 = new Base();
+     Base b2 = new Sub();
+     b1.method(5);
+     b2.method(6);
+   }
+ }
+
+```
+
+What output results when the main method of the class Sub is run?
+
+1.     	Value is 5     
+		Value is 6
+2.     	This value is 5
+		This value is 6
+3.     	Value is 5
+		This value is 6
+4.     	This value is 5
+		Value is 6
+5.     	I was passed 5
+		I was passed 6
+
+
+### 16 . Consider the following class definition:
+
+
+```java
+public class Test extends Base {
+  public Test(int j) {
+  }
+  public Test(int j, int k) {
+    super(j, k);
+  }
+}
+
+```
+
+Which of the following are legitimate calls to construct instances of the Test class?
+
+1.     Test t = new Test();
+2.     Test t = new Test(1);
+3.     Test t = new Test(1, 2);
+4.     Test t = new Test(1, 2, 3);
+5.     Test t = (new Base()).new Test(1);
+
+
+### 17 . Consider the following class definition:
+
+
+```java
+public class Test extends Base {
+ public Test(int j) {
+  }
+  public Test(int j, int k) {
+    super(j, k);
+  }
+}
+
+```
+
+Which of the following forms of constructor must exist explicitly in the definition of the Base class?
+
+1.     Base() { }
+2.     Base(int j) { }
+3.     Base(int j, int k) { }
+4.     Base(int j, int k, int l) { }
+
+### 18 . Which of the following statements are true?
+
+1.     An inner class may be declared private
+2.     An inner class may be declared static
+3.     An inner class defined in a method should always be anonymous
+4.     An inner class defined in a method can access all the method local variables
+5.     Construction of an inner class may require an instance of the outer class
+
+
+
+### 19 . Consider the following definition:
+
+
+```java
+ public class Outer {
+   public int a = 1;
+   private int b = 2;
+  public void method(final int c) {
+     int d = 3;
+     class Inner {
+       private void iMethod(int e) {
+
+       }
+    }
+  }
+}
+
+```
+
+Which variables may be referenced correctly at line 8?
+
+1.     a
+2.     b
+3.     c
+4.     d
+5.     e
+
+
+### 20 . Which of the following statements are true?
+
+1.     Given that Inner is a non-static class declared inside a public class Outer, and appropriate constructor forms are defined, an instance of Inner may be constructed like this:<br/>
+    **new Outer().new Inner()**
+1.     If an anonymous inner class inside the class Outer is defined to implement the interface ActionListener, it may be constructed like this:<br/>
+    **new Outer().new ActionListener()**
+1.     Given that Inner is a non-static class declared inside a public class Outer and appropriate constructor forms are defined, an instance of Inner may be constructed in a static method like this:<br/>
+    **new Inner()**
+1.     An anonymous class instance that implements the interface MyInterface may be constructed and returned from a method like this:<br/> **1. return new MyInterface(int x) { <br/>2. int x; <br/>3. public MyInterface(int x) { <br/>4. this.x = x; <br/>5. } <br/>6. };**
+
+
+### 21 . Given:
+
+
+```java
+ class J {
+  private static int notFinalized;
+  public static int notFinalized() {return notFinalized;}
+  private K k;
+  private int name;
+  public int name() {return name;}
+  public J(K k, int i) {this.k = k; name = i; notFinalized++;}
+  public void finalize() {
+    synchronized (k) {
+      System.out.print(name);
+      notFinalized--;
+      k.notify();
+    }
+  }
+}
+class K {
+  private void m1() {
+    J j = null;
+    for (int i = 0; i  0) {
+        try {wait();} catch (InterruptedException ie) {}
+      }
+    }
+  }
+  public static void main(String[] args) {
+    new K().m1();
+  }
+}
+
+```
+
+When the processing of line 2 begins how many objects of type J that were created at line 1 are eligible for garbage collection?
+
+1.     0
+2.     1
+3.     4
+4.     5
+5.     Can not be determined without more information
+6.     Compiler error
+7.     Run time error
+8.     None of the above
+
+
+### 22 . What is the output of the following code when compiled and run?
+
+
+```java
+public class Sample {
+	public static void main(String[] args) {
+		int y = 0;
+		int x = z = 1;
+		System.out.println(y + "," + x + "," + z);
+	}
+}
+
+```
+
+Choose two correct answers.?
+
+1.     Prints 0,1,1
+2.     Error during compilation at line 3
+3.     Prints 0,0,1
+4.     **Error during compilation at line 4**
+5.     Error during compilation at line 5
+
+
+### 23 . What is the output of the following code when compiled and run?
+
+
+```java
+public class Sample {
+public static void main(String[] args){
+	int j = 017;
+	int i = (byte)j >> 2;
+	System.out.println(Integer.toBinaryString(i));
+}
+}
+
+```
+
+Choose the one below:
+
+1.     Prints 3
+2.     Error during compilation at line 4
+3.     Error during compilation at line 5
+4.     Prints 11
+5.     Prints 0
+
+
+### 24 . Select three correct statements?
+
+1.     The garbage collection thread cannot outlive the last user thread
+2.     The garbage collection can be forced by invoking System.gc().
+3.     The garbage collection thread is a non-deamon thread
+4.     The finalize() method is invoked at most once by the JVM for any given object
+5.     The finalize() method may resurrect the object upon which it has been invoked
+
+### 25 . What is the output of the following code when compiled and run?
+
+
+```java
+import java.io.*;
+public class TechnoSample {
+	public static void main(String[] args) {
+		TechnoSampleSub myref = new TechnoSampleSub();
+		try{
+			myref.test();
+		}catch(IOException ioe){}
+	}
+	void test() throws IOException{
+		System.out.println("In TechnoSample");
+		throw new IOException();
+	}
+}
+class TechnoSampleSub extends TechnoSample {
+	void test() {
+		System.out.println("In TechnoSampleSub");
+	}
+}
+
+```
+
+Choose the one below:
+
+1.     Prints:<br/>In TechnoSampleSub
+2.     Prints:<br/>In TechnoSample
+3.     Prints:<br/>In TechnoSample<br/>In TechnoSampleSub
+4.     Prints:   <br/>In TechnoSampleSub<br/>In TechnoSample
+5.     The code does not compile
+
+
+### 26 . What is the output of the following code when compiled and run with the following command line?
+
+
+```java
+public class TechnoSample {
+	public static void main(String[] args) throws Exception {
+		int i=2;
+		boolean b = true;
+		throw new Exception("Values are:"+(b!=b)+","+(i=args.length)+","+(b=i==2));
+	}
+}
+
+```
+
+Choose two correct answers:
+
+1.     The exception message is Values are:false,3,true
+2.     The exception message is Values are:true,2,false
+3.     The exception message is Values are:false,2,true
+4.     The final value of b is false
+5.     An exception is thrown at runtime
+
+
+### 27 . Given:
+
+
+```java
+class A{}
+class B extends A implements E{}	//line 1
+class C extends A{}
+class D extends B{}
+interface E{}
+public class Question07 {
+	public static void main(String[] args) {
+		A a = new D();	//line 2
+		C c = new C();	//line 3
+		E e = (E)a;	//line 4
+		B b = (B)e;	//line 5
+	}
+}
+
+```
+
+Choose two correct answers:
+
+1.     The code compiles without error and runs fine
+2.     Compilation error on line 1 because interface E is not yet declared (forward-referencing)
+3.     Compilation error on line 4 because class A does not implement interface E
+4.     The cast on line 4 is mandatory
+5.     The cast on line 5 is not mandatory
+
+
+### 28 . How many objects are eligible for garbage collection immediately after line 1?
+
+
+```java
+public class TechnoGC {
+	public static void main(String[] args) {
+		TechnoGC tGC = new TechnoGC();
+		tGC.doSomething();	//line 1
+		Thread.sleep(20000);
+	}
+
+	public void doSomething(){
+		Object[] objArray = new Object[2];
+		for(int i = 0 ; i < objArray.length ; i++) {
+			objArray[i] = new Object();
+		}
+	}
+}
+
+```
+
+Choose the one below:
+
+1.     0
+2.     1
+3.     2
+4.     3
+5.     4
+
+
+### 29 . What is the output of the following code when compiled and run?
+
+
+```java
+public class TechnoSample {
+	public static void main(String[] args) {
+		try {
+			int i = (int)(Math.random()*10);
+			if(i 5");
+		} catch (Exception e){
+			System.err.println(e.getMessage()+" (i="+i+")");
+		}
+	}
+}
+
+```
+
+Choose the one below:
+
+1.     The output cannot be determined
+2.     Compilation error
+3.     An exception is thrown at runtime
+4.     Output is i = 2
+5.     Output is i > 5 (i=6)
+
+
+### 30 . What is the output of the following code when compiled and run?
+
+
+```java
+public class TechnoSample {
+	public static void main(String[] args) {
+		new TechnoSample().doSomething();
+	}
+
+	public void doSomething(){
+		int i=5;
+		Thread t = new Thread(new Runnable(){
+			public void run(){
+				for(int j=0;j 1)
+				System.out.println("No arithmetic exception");
+		} catch (ArithmeticException ae){
+			System.err.println("Arithmetic exception caught");
+		}
+	}
+}
+
+```
+
+Choose the one below:
+
+1.     Compilation error
+2.     No arithmetic exception will never be printed
+3.     The final value of i is 2
+4.     The final value of i is 0
+5.     The try-catch block is necessary for the code to compile
+
+### 31 . What is the output of the following code when compiled and run?
+ 
+```java
+public class TechnoSample {
+	public static void main(String[] args) {
+		StringBuffer buf1 = new StringBuffer("Hello W");
+		addSomeStuff(buf1);
+		System.out.println(buf1.toString());
+	}
+
+	public static void addSomeStuff(StringBuffer buf){
+		StringBuffer b = buf.replace(6,10,"orld");
+		System.out.println(b.delete(0,1).toString());
+	}
+}
+
+```
+
+Choose the one below:
+
+1.     Prints <br/>Hello World <br/>Hello World
+2.     Prints <br/>Hello orld <br/>Hello orld
+3.     Prints<br/>Hello orld <br/>ello orld
+4.     Prints <br/>ello orld <br/>ello orld
+5.     Compilation error
+
+
+### 32 . What is the output of the following code when compiled and run?
+>(Note: when an instance of a Vector is printed, its content appear between square brackets [])
+
+
+```java
+import java.util.*;
+public class TechnoSample {
+	public static void main(String[] args) {
+		Vector col = new Vector();
+		col.add(new Integer(1));
+		col.add(new Integer("2"));
+		col.add(new Float(3.2d));	//line 1
+		col.add(col.elementAt(1));
+		col.setElementAt(col.elementAt(2),0);
+		System.out.println(col);
+	}
+}
+
+```
+
+Choose two correct answers:
+
+1.     Compilation error on line 1
+2.     Only line 1 won’t compile
+3.     The code compiles and runs fine
+4.     Prints [3.2, 2, 3.2, 2]
+5.     Prints [1, 2, 3.2, 2]
+
+### 33 . What is the output of the following code when compiled and run?
+(‘\u0048’ is ‘H’ and ‘\u000a’ is a linefeed (LF)).
+
+
+```java
+public class TechnoSample {
+	public static void main(String[] args) {
+		String s = "\u0048ello\u000aWorld!";
+		System.out.println(s);
+	}
+}
+
+```
+
+Choose two correct answers:
+
+1.     Prints:<br/>Hello<br/>World!
+2.     Prints Hello World!(linefeed is ignored)
+3.     Compilation error
+4.     Compiles fine, but an exception is thrown at runtime
+5.     Unicode characters like ‘\u0048’ may be used to create String literals
+
+
+### 34 . What is the output of the following code when compiled and run?
+
+
+```java
+public class TechnoSample {
+	public static void main(String[] args) {
+		int i = 2;
+		try {
+			if((i/=(int)Math.floor(Math.random())) > 1)
+				System.out.println("No arithmetic exception");
+		} catch (ArithmeticException ae){
+			System.err.println("Arithmetic exception caught");
+		}
+	}
+}
+
+```
+
+Choose two correct answers:
+
+1.     Compilation error
+2.     No arithmetic exception will never be printed
+3.     The final value of i is 2
+4.     The final value of i is 0
+5.     The try-catch block is necessary for the code to compile
+
+
+
+### 35 . What is the output of the following code when compiled and run?
+
+
+```java
+public class TechnoSample {
+	public static void main(String[] args) throws Exception{
+		Thread t1 = new Thread(getRunnable(3));
+		Thread t2 = new Thread(getRunnable(4));
+		t1.join();
+		System.out.println("End");
+	}
+
+	public static Runnable getRunnable(final int id){
+		return new Runnable(){
+			public void run(){
+				for(int i = 0; i < id; i++){
+					System.out.print(" "+i);
+				}
+			}
+		};
+	}
+}
+
+```
+
+Choose two correct answers:
+
+1.     The output will always be the same whatever the underlying platform is
+2.     Prints: End
+3.     Prints:<br/>0 1 2<br/>End
+4.     The output cannot be determined
+5.     Compilation error
+
+
+### 36 . What is the output of the following code when compiled and run?
+
+
+```java
+public class TechnoSample {
+	public static void main(String[] args){
+		for(int i = 0;  i < 10; i++){
+			System.out.println(getPrimitive(127));	//line 1
+		}
+	}
+	public static int getPrimitive(byte b){	//line 2
+		return (short)(Math.random()*b);	//line 3
+	}
+}
+
+```
+
+Choose two correct answers:
+
+1.     Compilation error on line 1
+2.     Compilation error on line 2
+3.     Compilation error on line 3
+4.     Line 3 compiles fine
+5.     Prints 10 random numbers between 0 and 127
+
+### 37 . Select three correct statements?
+
+1.     A static method may override another static method
+2.     A static method cannot override a non-static method
+3.     A non-static method cannot override a static method
+4.     A non-static method may be overloaded by a static method
+5.     A synchronized method cannot be overridden
+
+
+### 38 . Consider the following code:
+
+
+```java
+public class TechnoSample  {
+	public static void main(String[] args) {
+		TechnoSample myref = new TechnoSampleSub();
+		try{
+			myref.test();
+		}catch(Exception e){}
+	}
+	void test() throws Exception{
+		System.out.println("In TechnoSample");
+		throw new Exception();
+	}
+}
+class TechnoSample Sub extends TechnoSample {
+	void test() {
+		System.out.println("In TechnoSampleSub");
+	}
+}
+
+```
+
+Choose three correct statements:
+
+1.     The try-catch block that encloses myref.test(); is mandatory for the code to compile
+2.     Prints: In TechnoSample
+3.     Prints: In TechnoSampleSub
+4.     Method test() in class TechnoSampleSub has no obligation to declare a throws clause
+5.     An exception is thrown at runtime
+
+
+### 39 . Consider the following code:
+
+
+```java
+import java.util.Date;
+
+public class Example {
+        public static void main(String args[]) {
+                Date d1 = new Date (99, 11, 31);
+                Date d2 = new Date (99, 11, 31);
+                method(d1, d2);
+                System.out.println("d1 is " + d1
+                                + "\nd2 is " + d2);
+        }
+
+        public static void method(Date d1, Date d2) {
+                d2.setYear (100);
+                d1 = d2;
+        }
+}
+
+```
+
+Which one or more of the following correctly describe the behavior when this program is compiled and run?
+
+1.     compilation is successful and the output is:<br/>**d1 is Fri December 31 00:00:00 GMT 1999 d2 is Fri December 31 00:00:00 GMT 1999**
+2.     compilation is successful and the output is:<br/>**d1 is Fri December 31 00:00:00 GMT 1999 d2 is Sun December 31 00:00:00 GMT 2000**
+3.     compilation is successful and the output is:<br/>**d1 is Sun December 31 00:00:00 GMT 2000 d2 is Sun December 31 00:00:00 GMT 2000**
+4.     the assignment ‘d1 = d2’ is rejected by the compiler because the Date class cannot overload the operator ‘=’
+5.     the expression (d1 is ” + d1 + “\nd2 is ” + d2) is rejected by the compiler because the Date class cannot overload the operator ‘+’
+
+
+### 40 . Read this code carefully:
+
+
+```java
+if("String".toString() == "String")
+
+    System.out.println("Equal");
+
+else
+
+    System.out.println("Not Equal");
+
+```
+
+Choose the below:
+
+1.     **the code will compile an print “Equal”**
+2.     the code will compile an print “Not Equal”
+3.     the code will cause a compiler error
+
+
+### 41 . Given:
+
+
+```java
+class Base{
+    static int oak=99;
+}
+
+public class Doverdale extends Base {
+    public static void main(String argv[]) {
+        Doverdale d = new Doverdale();
+        d.amethod();
+    }
+
+    public void amethod() {
+        //Here
+    }
+}
+
+```
+
+Which of the following if placed after the comment //Here, will compile and modify the value of the variable oak?
+Choose the below:
+
+1.     **super.oak = 1;**
+2.     **oak = 33;**
+3.     **Base.oak = 22;**
+4.     oak = 50.1;
+
+>oak int --> 4 error
+
+### 42 . What will happen when you attempt to compile and run the following code?
+
+
+```java
+public class TechnoSample {
+    public static void main(String argv[]) {
+        TechnoSample inc = new TechnoSample();
+        int i =0;
+        inc.fermin(i);
+        i = i++;
+        System.out.println(i);
+    }
+
+    void fermin(int i) {
+        i++;
+    }
+}
+
+```
+
+Choose the below:
+
+1.     Compile time error
+2.     Output of 2
+3.     Output of 1
+4.     **Output of 0**
+
+> Output of 1 when ```i=++i;```
+> 
+> luu y: sau i++ neu i=0 i se tang nen 1. nhung (i++)=0--> i=(i++)=0
+> 
+> neu i=0; sau System.out.println(i++); i=1. con output se hien thi 0.
+
+### 43 . Given:
+
+
+```java
+public class ZeroPrint {
+    public static void main(String argv[]) {
+        int i =0;
+        //Here
+    }
+}
+
+```
+
+Which of the following lines if placed after the comment //Here will print out 0.
+
+1.     System.out.println(i++);
+2.     System.out.println(i+’0′);
+3.     **System.out.println(i);**
+4.     System.out.println(i–);
+
+
+### 44 . What will happen when you attempt to compile and run this code?
+
+
+```java
+private class Base {}
+
+public class Vis {
+        transient int  iVal;
+
+        public static void main(String elephant[]) {
+        }
+}
+
+```
+
+Choose the below:
+
+1.     **Compile time error: Base cannot be private**
+2.     Compile time error indicating that an integer cannot be transient
+3.     Compile time error transient not a data type
+4.     Compile time error malformed main method
+
+### 45 . What best describes the appearance of an application with the following code?
+
+
+```java
+import java.awt.*;
+
+public class FlowAp extends Frame {
+    public static void main(String argv[]) {
+        FlowAp fa=new FlowAp();
+        fa.setSize(400,300);
+        fa.setVisible(true);
+    }
+
+    FlowAp() {
+        add(new Button("One"));
+        add(new Button("Two"));
+        add(new Button("Three"));
+        add(new Button("Four"));
+    }//End of constructor
+}//End of Application
+
+```
+
+Choose the below:
+
+1.     A Frame with buttons marked One to Four placed on each edge
+2.     A Frame with buutons marked One to four running from the top to bottom
+3.     A Frame with one large button marked Four in the Centre
+4.     An Error at run time indicating you have not set a LayoutManager
+
+
+### 46 . What will happen when you attempt to compile and run the following code?
+
+
+```java
+public class Bground extends Thread {
+    public static void main(String argv[]) {
+        Bground b = new Bground();
+        b.run();
+    }
+
+    public void start() {
+        for (int i = 0; i <10; i++) {
+            System.out.println("Value of i = " + i);
+        }
+    }
+}
+
+```
+
+Choose the below:
+
+1.     A compile time error indicating that no run method is defined for the Thread class
+2.     A run time error indicating that no run method is defined for the Thread class
+3.     Clean compile and at run time the values 0 to 9 are printed out
+4.     Clean compile but no output at runtime
+
+
+### 47 . What will be the output?
+
+
+```java
+int Output = 10;
+boolean b1 = false;
+
+if((b1 == true) && ((Output += 10) == 20))
+{
+    System.out.println("We are equal " + Output);
+}
+else
+{
+    System.out.println("Not equal! " + Output);
+}
+
+```
+
+Choose the below:
+
+1.     Compilation error, attempting to perform binary comparison on logical data type
+2.     Compilation and output of “We are equal 10”
+3.     Compilation and output of “Not equal! 20”
+4.     Compilation and output of “Not equal! 10”
+
+
+
+### 48 . What will be the output?
+
+
+```java
+class Value
+{
+    public int i = 15;
+} //Value
+
+public class Test
+{
+    public static void main(String argv[])
+	{
+        Test t = new Test();
+        t.first();
+    }
+
+    public void first()
+    {
+        int i = 5;
+        Value v = new Value();
+        v.i = 25;
+        second(v, i);
+        System.out.println(v.i);
+    }
+
+    public void second(Value v, int i)
+    {
+        i = 0;
+        v.i = 20;
+        Value val = new Value();
+        v =  val;
+        System.out.println(v.i + " " + i);
+    }
+} // Test
+
+```
+
+Choose the below:
+
+1.     15 0 <br/>20
+2.     15 0 <br/>15
+3.     20 0 <br/>20
+4.     0 15 <br/>20
+
+
+### 49 . Given the code below, and making no other changes, which access modifiers (public, protected or private) can legally be placed before myMethod() on line 3? If line 3 is left as it is, which keywords can legally be placed before myMethod on line 8?
+
+
+```java
+class HumptyDumpty
+{
+    void myMethod() {}
+}
+
+class HankyPanky extends HumptyDumpty
+{
+    void myMethod() {}
+}
+
+```
+
+Choose the below:
+
+1.     private or nothing (i.e. leaving it as it is) on line 3. Nothing (i.e. leaving it as it is) or protected or public on line 8
+2.     public or protected on line 3. private or nothing (i.e. leaving it as it is) on line 8
+3.     nothing (i.e. leaving it as it is) or protected or public on line 3. private or nothing (i.e. leaving it as it is) on line 8
+4.     None of the above
+
+
+### 50 . What is the result when you compile and run the following code?
+
+
+```java
+public class ThrowsDemo
+{
+    static void throwMethod()
+    {
+        System.out.println("Inside throwMethod.");
+        throw new IllegalAccessException("demo");
+    }
+
+    public static void main(String args[])
+    {
+        try
+        {
+            throwMethod();
+        }
+        catch (IllegalAccessException e)
+        {
+            System.out.println("Caught " + e);
+        }
+    }
+} // ThrowsDemo
+
+```
+
+Choose the below:
+
+1.     Compilation error
+2.     Runtime error
+3.     Compile successfully, nothing is printed
+4.     Inside throwMethod. followed by caught: java.lang.IllegalAccessExcption: demo
+
+
+# Answers
+----
+
+1 : 1 is correct.
+Explanation:
+Option 1 is correct because a class must be declared abstract when it contains one or more abstract methods. Abstract methods are methods without a body.
+
+Options 2, 3, and 4 are incorrect because compilation succeeds.
+
+2 : 1,2 & 3 is correct.
+Explanation:
+Options 1, 2, and 3 are correct because a switch statement test requires an integer expression. If the values in the expression are of type byte, short, or char, promotion to the integer value will occur.
+
+Options 4 and 5 are incorrect because class references, floating point values, and long values are not allowed in the expression.
+
+3 : 4 is correct.
+Explanation:
+Option 4 is correct because no accessible references to the object created at line 3 exist after the method returns. This is because automatic variables are used for all the references in this code.Option 1 is incorrect because the NewGarb class compiles successfully. Option 2 is incorrect because the getIt() method may or may not be declared static. Option 3 is incorrect because an exception is not received.
+
+4 : 4 & 5 is correct.
+Explanation:
+Option 4 is correct because “char c = ‘f’;” placed on line 4 will create a local variable, which is a variable declared within a method. These variables exist only as long as the method exists.
+
+Option 5 is correct because “static char c;” placed on line 2 will create a class variable, which is a variable declared within the class. These variables are created and destroyed as the class is created and destroyed.
+
+Option 1 is incorrect because it does not use the static keyword. A variable that is accessed by a static method must be declared static, or the access must be made using an instance reference.Likewise, option 3 is not declared static using the static keyword. Option 2 is incorrect because it does not initialize the variable. Option 6 is incorrect because char is not a class, and so cannot be instantiated.
+
+5 : 2 is correct.
+Explanation:
+Option 2 is correct because t will result in a value of 4. The ++ operator will increment variables by one. Stepping through the for loop until p < 5, incrementing the variables, and performing the calculation will result in t being equal to 4.
+
+6 : 3 is correct.
+Explanation:
+Option 3 is correct because the method name, argument list, and return type are the same as the getType method defined in the IntType class. Overriding methods must be declared with the same name, argument list, and return type as the overridden method.
+
+Option 1 is incorrect because the return type is not the same as the getType method in the IntType class. Option 2 is incorrect because both the return type and argument list are different from the getType method in the IntType class. Option 4 is incorrect because the argument list is different from the getType method in the IntType class.
+
+7 : 5 is correct.
+Explanation:
+Option 5 is correct because the Runnable interface is implemented by declaring a synchronized run() method. The method is declared as synchronized to signify that the object lock must be obtained
+
+Options 1, 2, and 3 are incorrect because compilation succeeds. Option 4 is incorrect, but would be correct if the run() method were not declared as synchronized
+
+8 : 3 is correct.
+Explanation:
+Option 3 is correct because it creates the Birthdays class and displays the Birthdays frame. The frame is displayed by calling the setVisible() method with an argument of true.
+
+Options 1, 2, and 4 are incorrect because the Birthdays class is not created and the frame is not displayed.
+
+9 : 3 is correct.
+Explanation:
+Option 3 is correct because it uses the ceil() method. This method rounds a value up (to ceiling).
+
+Option 1 is incorrect because the min() method returns the smaller of two values. Option 2 is incorrect because the max() method returns the larger of two values. Option 4 is incorrect because the floor() method rounds a value down.
+
+10 : 3 is correct.
+Explanation:
+Option 3 is correct because the put() method is used to add a key/value association to a Map.
+
+Option 1 is incorrect because the values() method returns a Collection of all values in a Map.Option 2 is incorrect because the entrySet() method returns a Set of all mappings in a Map. Option 4 is incorrect because the pubAll() method copies all mappings from one Map to another.
+
+11 : 1,3 & 5 is correct.
+Explanation:
+1, 3, and 4 are correct. In each of these answers, the argument list differs from the original, so the method is an overload.Overloaded methods are effectively independent, and there are no constraints on the accessibility, return type, or exceptions that may be thrown.2 would be a legal overriding method, except that it cannot be defined in the same class as the original method; rather, it must be declared in a subclass.4 is also an override, since the types of its arguments are the same: Changing the parameter names is not sufficient to count as overloading.
+
+12 : 2 & 4 is correct.
+Explanation:
+2 and 4 are correct. 1 is illegal because it is less accessible than the original method; the fact that it throws no exceptions is perfectly acceptable. 2 is legal because it overloads the method of the parent class,and as such it is not constrained by any rules governing its return value, accessibility, or argument list. The exception thrown by 3 is sufficient to make that method illegal. 4 is legal because the accessibility and return type are identical,and the method is an override because the types of the arguments are identical–remember that the names of the arguments are irrelevant.The absence of an exception list in 4 is not a problem: An overriding method may legitimately throw fewer exceptions than its original, but it may not throw more.
+
+13 : 5 & 6 is correct.
+Explanation:
+5 and 6 are correct. The Cat class is a subclass of the Pet class, and as such should extend Pet, rather than containing an instance of Pet. 2 and 3 should be members of the Pet class and as such are inherited into the Cat class; therefore, they should not be declared in the Cat class. 4 would declare a reference to an instance of the Cat class, which is not generally appropriate inside the Cat class itself(unless, perhaps, you were asked to give the Cat a member that refers to its mother). Finally, the neutered flag and markings descriptions, 5 and 6, are the items called for by the specification; these are correct items
+
+14 : public class Cat extends Pet
+Explanation:
+
+public class Cat extends Pet
+. The class should be public since it is to be used freely throughout the application. The statement “A cat is a pet” tells us that the Cat class should subclass Pet. The other words offered are required for the body of the definitions of either Cat or Pet–for use as member variables–but are not part of the opening declaration.
+
+15 : 3 is correct.
+Explanation:
+3 is correct. The first message is produced by the Base class when b1.method(5) is called and is therefore Value is 5. Despite variable b2 being declared as being of the Base class, the behavior that results when method() is invoked upon it is the behavior associated with class of the actual object, not with the type of the variable. Since the object is of class Sub, not of class Base, the second message is generated by line 3 of class Sub: This value is 6.
+
+16 : 2 & 3 is correct.
+Explanation:
+2 and 3 are correct. Since the class has explicit constructors defined, the default constructor is suppressed, so 1 is not possible. 2 and 3 have argument lists that match the constructors defined at lines 2 and 4 respectively,and so are correct constructions. 4 has three integer arguments, but there are no constructors that take three arguments of any kind in the Test class, so 4 is incorrect.Finally, 5 is a syntax used for construction of inner classes and is therefore wrong.
+
+17 : 1 & 3 is correct.
+Explanation:
+1 and 3 are correct. In the constructor at lines 2 and 3, there is no explicit call to either this() or super(), which means that the compiler will generate a call to the zero argument superclass constructor, as in 1. The explicit call to super() at line 5 requires that the Base class must have a 7.constructor as in 3. This has two consequences. First, 3 must be one of the required constructors and therefore one of the answers.Second, the Base class must have at least that constructor defined explicitly, so the default constructor is not generated, but must be added explicitly. Therefore the constructor of 1 is also required and must be a correct answer.At no point in the Test class is there a call to either a superclass constructor with one or three arguments, so 2 and 4 need not explicitly exist.
+
+ 18 : 1,2 & 5 is correct.
+Explanation:
+1, 2, and 5 are correct. Inner classes may be defined with any accessibility, so private is entirely acceptable and 1 is correct. Similarly, the static modifier is permitted on an inner class, which causes it not to be associated with any particularinstance of the outer class. This means that 2 is also correct. Inner classes defined in methods may be anonymous–and indeed often are–but this is not required, so 3 is wrong. 4 is wrong because it is not possible for an inner class defined in a method to access the local variables of the method, except for those variables that are marked as final. Constructing an instance of a static inner class does not need an instance of the enclosing object, but all non-static inner classes do require such a reference, and that reference must be available to the new operation. The reference to the enclosing object is commonly implied as this, which is why it is commonly not explicit. These points make 5 true.
+
+19 : 1,2,3 & 5 is correct.
+Explanation:
+1, 2, 3, and 5 are correct. Since Inner is not a static inner class, it has a reference to an enclosing object, and all the variables of that object are accessible. Therefore 1 and 2 are correct, despite the fact that b is marked private.Variables in the enclosing method are only accessible if those variables are marked final, so the method argument c is correct, but the variable d is not.Finally, the parameter e is of course accessible, since it is a parameter to the method containing line 8 itself.
+
+20 : 1 is correct.
+Explanation:
+1 is correct. Construction of a normal inner class requires an instance of the enclosing class. Often this enclosing instance is provided via the implied this reference, but an explicit reference may be used in front of the new operator, as shown in 1.
+
+Hence 2 is illegal–it actually attempts to instantiate the interface ActionListener as if that interface were itself an inner class inside Outer.
+
+3 is illegal since Inner is a non-static inner class, and so it requires a reference to anenclosing instance when it is constructed. The form shown suggests the implied this reference, but since the method is static, there is no this reference and the construction is illegal.
+
+4 is illegal since it attempts to use argumentsto the constructor of an anonymous inner class that implements an interface. The clue is in the attempt to define a constructor at line 3. This would be a constructor for the interface MyInterface not for the inner class–this is wrong on two counts.
+
+21 : 3 is correct.
+Explanation:
+Method K.m1 creates five objects of type J. Each instance has a name represented by an integer between 0 and 4 inclusive. If the garbage collector does not run then the program will produce no output.If the garbage collector does run then the output of the program could be a series of integers that are the names of four of the five objects. As each new object is created its reference is assigned to the reference variable j.The previously referenced object then becomes eligible for garbage collection. The last object created, 4, is not available for garbage collection until method m1 runs to completion.The while loop in the synchronized block will never complete because J.notFinalized will never return zero. This program is intended to provide a working example of garbage collecting objects referenced by local variables.
+
+22 : 4 & 5 is correct.
+Explanation:
+Variable z is not declared, thus, z cannot be resolved on lines 2 and 3. In Java, z cannot be declared that way. In order to get this code to compile, we have to write either:
+int z=1,x=z;
+Or
+int z=1;
+int x=z;
+Or
+int z=1;
+int x=1;
+
+23 : 4 is correct.
+Explanation:
+First off, 017 is an octal integer literal having the decimal value 15. Second, the cast to byte only applies to j and not to j >> 2 as a whole. Thus, j is downcast to byte and then upcast to int again before the shifting.Briefly, the cast has no effect here. Then, the binary sequence of 15 is 00000000 00000000 00000000 00001111, which, shifted 2 bits to the right, yields 00000000 00000000 00000000 00000011. Finally, the binary sequence, 11, is printed. Note that the prefixed 0’s are dismissed.
+
+24 : 1,4 & 5 is correct.
+Explanation:
+The garbage collection thread is a deamon thread. The latter die when there are no more users threads running. The garbage collection cannot be forced.
+
+25 : 5 is correct.
+Explanation:
+The code does not compile because no IOException is thrown when invoking myref.test(). Note that myref’s declared and runtime types are TechnoSampleSuband thus no dynamic lookup will be performed. However, if you change the declared type to TechnoSample, the code will compile and the correct answer would be A because method test() isoverridden in TechnoSampleSub
+
+26 : 3 & 5 is correct.
+Explanation:
+Do not mix b!=b and b=!b. In the former, we check if b’s value is different from b’s value (?!) which is clearly false. In the latter, we assign b’s opposite value to itself, that is, if b is true, then after b=!b, b ends up being false.Moreover, be aware that b=i==2 is evaluated as b=(i==2) because operator = has the lowest precedence. Finally, note that the arguments to the Exception constructor are evaluatedfrom the left to the right. First, b!=b is evaluated, then i=args.length (args.length is 2, so i keeps its value), and finally, b=i==2.
+
+27 : 1 & 4 is correct.
+Explanation:
+First, pay attention to the class hierarchy (B and C are sibling classes!!) Then, there is no such thing as forward-referencing issues when using interfaces declared later in the compilation unit.On line 4, we are dealing with an object whose runtime type is D which implements interface E. The cast is mandatory, though, since the reference type (A) is not assignmentcompatible with the reference type E. The cast on line 5 is mandatory for the same reasons.
+
+28 : 4 is correct.
+Explanation:
+We declare an array of Object of length two. We then initialize each element to a new Object. We have 2 objects in the array and the array itself (which is an object, too!), that makes 3.
+
+29 : 2 is correct.
+Explanation:
+The code does not compile because i (declared in the try block!) is not in scope when accessed from the catch block.
+
+30 : 2 is correct.
+Explanation:
+The code does not compile because the anonymous inner class (new Runnable(){…}) tries to access the non-final local variable i
+
+31 : 4 is correct.
+Explanation:
+Whenever you perform some operation upon a String object, you will get a new String object if the operation had some effect on the original String, we say that a String is immutable and that its sequence of characters cannot be changed.Here, we are dealing with a StringBuffer which is an implementation of a mutable String, that is you can modify the character sequence it contains. Whenever you perform an operation upon a StringBuffer, the same StringBuffer(whose content has been modified) is returned. The next important thing to remember is that when a reference to an object is passed as argument to a method, a copy of the reference is actually passed to the method. In this case,buf1 is passed to addSomeStuff and replace is invoked upon it. The changes operated by replace are affecting buf1. We then store the reference to buf (which references the same object as buf1 into a local StringBuffer called b.
+
+32 : 3 & 4 is correct.
+Explanation:
+This question mainly tests your knowledge of the various wrapper classes’ constructors. The most notorious thing here is that we can actually give a double as an argument to the Float constructor.
+
+Otherwise, the question tests your ability to understand how Collection classes work. The effect of add(), elementAt() and setElementAt() is trivial, just have a look at the API of the Vector class for more information
+
+33 : 3 & 5 is correct.
+Explanation:
+This shows you that Unicode characters are processed very early during the lexical parsing of a Java source file. Here LF, which is a line terminator, isactually translated to a line terminator and this results in malformed Java code. For instance, the example given above is actually interpreted as:
+String s = “Hello
+World”;
+You can notice that the first line is unterminated and the compiler lets you know that.
+
+34 : 2 & 3 is correct.
+Explanation:
+An ArithmeticException is always thrown when executing this code because Math.random() returns a double between 0.00000 and 0.999999 and Math.floor() just removes the decimal part (the part after the dot).So, the result of the combination of Math.floor(Math.random()) is always 0.0.The cast to int guarantees that 0 will be returned, and an integer division by 0 does always throw an ArithmeticException.
+
+35 : 1 & 2 is correct.
+Explanation:
+We wait on Thread t1 to finish before printing End but none of the threads are started so only End is printed. Moreover, the same output will be printed whichever the platform is.
+
+36 : 1 & 4 is correct.
+Explanation:
+Line 1 does not compile because getPrimitive() takes a byte and we pass it an int. In a normal assignment (byte b = 127;) this would work because 127 is in the range for byte values and the compiler implicitely does a norrowing conversion.But this is not the case in method invocations. A quote from JLS 5.3: “The designers of the Java programming language felt that including these implicit narrowing conversions would add additional complexity to the overloaded method matchingresolution process”. This speaks for itself. Line 3 compiles fine because we have to do with a widening primitive conversion form short to int which is perfectly straightforward.
+
+37 : 2,3 & 4 is correct.
+Explanation:
+Overriding is for non-static methods and hiding is for static methods. So the following statements are the only true statements about hiding and overriding:
+
+a static method (in a subclass) may hide another static method (in a superclass)
+a static method (in a subclass) cannot hide a non-static method (in a superclass)
+a non-static method (in a subclass) may override another non-static method (in a superclass)
+a non-static method (in a subclass) cannot override a static method (in a superclass)
+
+38 : 1,3 & 4 is correct.
+Explanation:
+myref is an instance of class TechnoSampleSub referenced by a variable of type TechnoSample. Method test() in class TechnoSample is overridden in class TechnoSampleSub, thus the one to be invoked is the one declared in class TechnoSampleSub(Polymorphism!). Moreover, test() has no obligation to declare a throws clause (see overriding rules!). The try-catch block is mandatory because myref could as well reference an instanceof class TechnoSample and in that case the method test() to be invoked would be the one declared in class TechnoSample which throws an exception.
+
+39 : 2 is correct.
+Explanation:
+1) is false because we know that the data in d2 was changed. 3) is false because we know that the data in d1 was not changed. The names d1 and d2 are used in both main and method to be confusing. They are different and stored on the stack in different plaAll the interesting stuff that happen in the Example class is in method. main simply initializes some data and prints the results. In method, the followning happens:
+1.d2 has its year set to 100 (really 2000, as 2.Object d1 is set to be the same as d2. This is a change of the actual reference, not in the data at d1.
+Both of these line are perfectly legal, and do not result in a compilation error, so d) is false. I will also point out here that e) is String context. toString() is defined by the Object class and so it is available on all classes in Java. Most non-trivial classes override toString() to return more explicit information about themselves.
+
+40 : 1 is correct.
+
+41 : 1,2 & 3 is correct.
+Explanation:
+Because the variable oak is declared as static only one copy of it will exist. Thus it can be changed either through the name of its class or through the name of any instance of that class.Because it is created as an integer it canot be assigned a fractional component without a cast.
+
+42 : 4 is correct.
+Explanation:
+The method fermin only receives a copy of the variable i and any modifications to it are not reflected in the version in the calling method.The post increment operator ++ effectivly modifes the value of i after the initial value has been assiged to the left hand side of the equals operator.
+
+43 : 1,3 & 4 is correct.
+Explanation:
+The options for this question might look suspiciously easy if you are not aware of the effects of the post-increment operators. The ++ and — operations for examples 1 and 4 only come into effect after the outputoperations, ie after whatever else is done to them on that line of code. Option 2 should be fairly obvious as you should know that the single quote characters indicate a char value, ie storing the character ratherthan the numberical value for 0.
+
+44 : 1 is correct.
+Explanation:
+A top leve (non nested) class cannot be private.
+
+45 : 3 is correct.
+Explanation:
+he default layout manager for a Frame is the BorderLayout manager. This Layout manager defaults to placing components in the centre if no constraint is passed with the call to the add method.
+
+46 : 4 is correct.
+Explanation:
+If the for loop were defined in a method called:
+
+public void run()
+and the call in the main method had been to b.start(), the list of values from 0 to 9 would have been output.
+
+47 : 4 is correct.
+Explanation:
+Note that && is short-circuit logical AND operator. If first operand (before &&) is false (or evaluated to false) then the other operand will not be evaluated.This illustrates that the Output +=10 calculation was never performed because processing stopped after the first operand was evaluated to be false.If you change the value of b1 to true, processing occurs as you would expect and the output would be “We are equal 20”.
+
+48 : 1 is correct.
+Explanation:
+When we pass references in Java what actually gets passed is the value of that reference (i.e. memory address of the object being referenced and not the actual object called by that reference) and it gets passed as value (i.e a copy of thereference is made). Now when we make changes to the object referenced by that reference it reflects on that object even outside of the method being called but any changes made to the reference itself is not reflected on that reference outside ofthe method which is called.
+
+49 : 1 is correct.
+Explanation:
+The basic principle is that a method cannot be overridden to be more private. Since the method is being overridden to be friendly (default modifier) it can only be private or friendly in the superclass.Also, if the method in superclass is left as it is (i.e. friendly access) the method in subclass can be friendly, protected or public.
+
+50 : 1 is correct.
+Explanation:
+Exception :java.lang.IllegalAccessExcption must be caught or placed in the throws clause of the throwMethod(), i.e. the declaration of throwMethod() bechanged to “static void throwMethod() throws IllegalAccessExcption”. Thus compilation error will occur.
+
 ### 
 
 
@@ -1590,6 +3156,62 @@ File class can be used to navigate the directories in the underlying file system
 ```java
 ```
 
+
+### 
+
+
+```java
+```
+
+
+### 
+
+
+```java
+```
+
+### 
+
+
+```java
+```
+
+
+### 
+
+
+```java
+```
+
+
+### 
+
+
+```java
+```
+
+
+### 
+
+
+```java
+```
+
+
+### 
+
+
+```java
+```
+
+
+### 
+
+
+```java
+```
+
+
 ### 
 
 
@@ -1672,6 +3294,48 @@ File class can be used to navigate the directories in the underlying file system
 ```java
 ```
 
+
+### 
+
+
+```java
+```
+
+
+### 
+
+
+```java
+```
+
+
+### 
+
+
+```java
+```
+
+
+### 
+
+
+```java
+```
+
+
+### 
+
+
+```java
+```
+
+
+### 
+
+
+```java
+```
+
 ### 
 
 
@@ -1712,6 +3376,7 @@ File class can be used to navigate the directories in the underlying file system
 
 ```java
 ```
+
 
 
 
