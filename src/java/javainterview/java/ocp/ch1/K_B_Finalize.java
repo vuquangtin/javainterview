@@ -11,7 +11,7 @@ import java.util.List;
  *      href="https://github.com/vuquangtin/javainterview">https://github.com/vuquangtin/javainterview</a>
  *
  */
-public class K_B_finalize {
+public class K_B_Finalize {
     /*-
     Java allows objects to implement a method called finalize() that might get called. This method gets called if the garbage collector tries to collect the object.
     If the garbage collector doesn’t run, the method doesn’t get called.

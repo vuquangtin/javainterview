@@ -3,6 +3,10 @@ package javainterview.java.ocp.ch1;
 /**
  * A_understanding_the_java_class_structure
  * 
+ * https://github.com/cjarroyo/oca8/blob
+ * /master/src/test/java/ch2/ch2/operatorsAndStatements
+ * /A_Understanding_Java_Operators/A_UnderstandingJavaOperators.java
+ * 
  * @author EMAIL:vuquangtin@gmail.com , tel:0377443333
  * @version 1.0.0
  * @see <a
